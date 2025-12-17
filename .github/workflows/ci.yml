@@ -40,4 +40,4 @@ jobs:
           JWT_ACCESS_SECRET: test
           JWT_REFRESH_SECRET: test
           COOKIE_SECURE: "false"
-        run: npm run test:run
+        run: npx run test:run
