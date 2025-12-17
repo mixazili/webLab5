@@ -15,11 +15,16 @@ jobs:
         image: mongo:6
         ports:
           - 27017:27017
+        env:
+          MONGO_INITDB_ROOT_USERNAME: root
+          MONGO_INITDB_ROOT_PASSWORD: example
+          MONGO_INITDB_DATABASE: lab5
         options: >-
           --health-cmd="mongosh --eval 'db.runCommand({ ping: 1 })'"
           --health-interval=10s
           --health-timeout=5s
           --health-retries=5
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -31,12 +36,12 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run tests
         env:
           MONGO_URI: mongodb://root:example@mongo:27017/lab5
-          JWT_ACCESS_SECRET: test
-          JWT_REFRESH_SECRET: test
+          JWT_ACCESS_SECRET: test_access_secret
+          JWT_REFRESH_SECRET: test_refresh_secret
           COOKIE_SECURE: "false"
-        run: npm run test:run
+        run: npx vitest run
