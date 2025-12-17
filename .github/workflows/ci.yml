@@ -38,10 +38,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run tests
+      - name: Run integration tests
         env:
-          MONGO_URI: mongodb://root:example@mongo:27017/lab5
-          JWT_ACCESS_SECRET: test_access_secret
-          JWT_REFRESH_SECRET: test_refresh_secret
-          COOKIE_SECURE: "false"
-        run: npx vitest run
+          MONGO_URI: mongodb://root:example@mongo:27017/lab5?authSource=admin
+          JWT_ACCESS_SECRET: tes
+          JWT_REFRESH_SECRET: test
+          NODE_ENV: test
+        run: npm test

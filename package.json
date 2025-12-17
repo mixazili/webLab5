@@ -1,34 +1,26 @@
 {
-  "name": "repet-app",
+  "name": "app",
   "version": "1.0.0",
-  "description": "Tutor platform backend",
   "main": "src/server.js",
-  "type": "module",
   "scripts": {
-    "dev": "nodemon src/server.js",
     "start": "node src/server.js",
     "test": "vitest run",
     "test:watch": "vitest",
     "unit": "vitest run tests/unit.test.js",
-    "integration": "vitest run tests/integration.test.js",
-    "test:run": "vitest run"
+    "integration": "vitest run tests/integration.test.js"
   },
-  "keywords": [],
-  "author": "Your Name",
-  "license": "ISC",
   "dependencies": {
-    "bcrypt": "^6.0.0",
+    "bcrypt": "^5.1.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
-    "dotenv": "^16.0.0",
-    "express": "^5.1.0",
-    "helmet": "^7.0.0",
-    "jsonwebtoken": "^9.0.0",
-    "mongoose": "^7.3.4",
-    "supertest": "^7.3.2"
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10",
-    "vitest": "^4.7.8"
+    "supertest": "^6.3.4",
+    "vitest": "^1.6.0"
   }
 }
