@@ -32,7 +32,10 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+
+      - name: Fix permissions for node_modules
+      run: chmod +x ./node_modules/.bin/vitest
 
       - name: Run tests
         env:
@@ -40,4 +43,4 @@ jobs:
           JWT_ACCESS_SECRET: test
           JWT_REFRESH_SECRET: test
           COOKIE_SECURE: "false"
-        run: npx vitest run
+        run: npm run test:run
