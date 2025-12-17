@@ -1,18 +1,20 @@
-import mongoose from "mongoose";
-import { describe, beforeAll, afterAll, it, expect, vi } from "vitest";
-import request from "supertest";
-import app from "../src/app";
+// tests/integration.test.js
+const mongoose = require("mongoose");
+const request = require("supertest");
+const app = require("../src/app");
 
-vi.setTimeout(60000); // 60 секунд на все тесты
+const MONGO_URI =
+  process.env.MONGO_URI || "mongodb://root:example@mongo:27017/lab5";
 
-const MONGO_URI = process.env.MONGO_URI;
+describe("Auth integration tests", function () {
+  // Увеличиваем таймаут для beforeAll/afterAll
+  this.timeout(30000); // 30 секунд на весь describe
 
-describe("Auth integration tests", () => {
   beforeAll(async () => {
     await mongoose.connect(MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      serverSelectionTimeoutMS: 60000,
+      serverSelectionTimeoutMS: 30000, // ждём до 30 секунд
     });
   });
 
@@ -21,19 +23,23 @@ describe("Auth integration tests", () => {
     await mongoose.disconnect();
   });
 
-  it("should register user", async () => {
+  it("should register user", async function () {
+    this.timeout(10000); // 10 секунд на этот тест
     const res = await request(app).post("/api/auth/register").send({
       username: "vitestuser",
       password: "12345678",
     });
+
     expect(res.statusCode).toBe(201);
   });
 
-  it("should login user and return access token", async () => {
+  it("should login user and return access token", async function () {
+    this.timeout(10000); // 10 секунд на этот тест
     const res = await request(app).post("/api/auth/login").send({
       username: "vitestuser",
       password: "12345678",
     });
+
     expect(res.statusCode).toBe(200);
     expect(res.body.accessToken).toBeDefined();
   });
