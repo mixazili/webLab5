@@ -10,7 +10,7 @@
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
     "test": "vitest run",
-    "test:run": "vitest run",
+    "test:run": "vitest",
     "test:watch": "vitest"
   },
   "keywords": [],
