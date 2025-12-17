@@ -35,8 +35,9 @@ jobs:
 
       - name: Run tests
         env:
-          MONGO_URI: mongodb://root:example@localhost:27017/lab5
+          MONGO_URI: mongodb://root:example@mongo:27017/lab5
           JWT_ACCESS_SECRET: test
           JWT_REFRESH_SECRET: test
           COOKIE_SECURE: "false"
-        run: npm run test:run
+        run: npx vitest run
+      
