@@ -2,19 +2,19 @@
 const mongoose = require("mongoose");
 const request = require("supertest");
 const app = require("../src/app");
+const { describe, it, expect, beforeAll, afterAll } = require("vitest"); // <--- импортируем
 
 const MONGO_URI =
   process.env.MONGO_URI || "mongodb://root:example@mongo:27017/lab5";
 
 describe("Auth integration tests", function () {
-  // Увеличиваем таймаут для beforeAll/afterAll
   this.timeout(30000); // 30 секунд на весь describe
 
   beforeAll(async () => {
     await mongoose.connect(MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      serverSelectionTimeoutMS: 30000, // ждём до 30 секунд
+      serverSelectionTimeoutMS: 30000,
     });
   });
 
@@ -24,7 +24,7 @@ describe("Auth integration tests", function () {
   });
 
   it("should register user", async function () {
-    this.timeout(10000); // 10 секунд на этот тест
+    this.timeout(10000);
     const res = await request(app).post("/api/auth/register").send({
       username: "vitestuser",
       password: "12345678",
@@ -34,7 +34,7 @@ describe("Auth integration tests", function () {
   });
 
   it("should login user and return access token", async function () {
-    this.timeout(10000); // 10 секунд на этот тест
+    this.timeout(10000);
     const res = await request(app).post("/api/auth/login").send({
       username: "vitestuser",
       password: "12345678",
