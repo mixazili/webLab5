@@ -1,0 +1,70 @@
+2025-12-10T15:42:46.131Z INFO: MongoDB connected
+2025-12-10T15:42:46.138Z INFO: Server started on port 4000
+2025-12-10T15:48:56.055Z INFO: register_success
+2025-12-10T15:49:15.591Z INFO: register_success
+2025-12-10T15:51:02.236Z INFO: login_success
+2025-12-10T15:53:04.176Z INFO: MongoDB connected
+2025-12-10T15:53:04.183Z INFO: Server started on port 4000
+2025-12-10T15:54:01.425Z INFO: login_success
+2025-12-10T15:54:47.077Z INFO: login_success
+2025-12-10T15:55:51.697Z INFO: login_failed
+2025-12-10T15:58:09.282Z INFO: MongoDB connected
+2025-12-10T15:58:09.289Z INFO: Server started on port 4000
+2025-12-10T15:58:26.137Z INFO: login_failed
+2025-12-10T15:58:27.108Z INFO: login_failed
+2025-12-10T15:58:28.062Z INFO: login_failed
+2025-12-10T15:58:29.063Z INFO: login_failed
+2025-12-10T15:58:29.063Z WARN: suspicious_multiple_failed_logins
+2025-12-10T15:58:29.867Z INFO: login_failed
+2025-12-10T15:58:29.868Z WARN: suspicious_multiple_failed_logins
+2025-12-10T15:58:30.781Z INFO: login_failed
+2025-12-10T15:58:30.782Z WARN: suspicious_multiple_failed_logins
+2025-12-10 19:04:11 INFO: MongoDB connected
+2025-12-10 19:04:11 INFO: Server started on port 4000
+2025-12-10 19:04:42 INFO: login_success
+2025-12-10 19:04:56 INFO: login_failed
+2025-12-10 19:05:10 INFO: login_failed
+2025-12-10 19:05:11 INFO: login_failed
+2025-12-10 19:05:26 INFO: login_failed
+2025-12-10 19:05:28 INFO: login_failed
+2025-12-10 19:05:28 WARN: suspicious_multiple_failed_logins
+2025-12-10 19:05:55 INFO: login_success
+2025-12-10 19:09:11 INFO: login_success
+2025-12-10 19:09:21 INFO: Private route accessed
+2025-12-10 19:10:11 INFO: refresh_success
+2025-12-10 19:10:14 INFO: refresh_success
+2025-12-10 19:10:16 INFO: refresh_success
+2025-12-10 19:10:16 INFO: refresh_success
+2025-12-10 19:10:17 INFO: refresh_success
+2025-12-10 19:10:17 INFO: refresh_success
+2025-12-10 19:11:53 INFO: logout
+2025-12-10 19:12:16 INFO: login_success
+2025-12-10 19:12:27 INFO: Private route accessed
+2025-12-10 19:12:33 INFO: refresh_success
+2025-12-10 19:12:39 INFO: Private route accessed
+2025-12-10 19:12:52 INFO: Private route accessed
+2025-12-10 19:12:57 INFO: refresh_success
+2025-12-10 19:12:57 INFO: refresh_success
+2025-12-10 19:13:05 INFO: Private route accessed
+2025-12-10 19:14:26 INFO: refresh_success
+2025-12-10 19:14:34 INFO: Private route accessed
+2025-12-10 19:16:52 INFO: MongoDB connected
+2025-12-10 19:16:52 INFO: Server started on port 4000
+2025-12-10 19:18:14 INFO: logout
+2025-12-10 20:24:27 INFO: login_success
+2025-12-10 20:25:00 INFO: Private route accessed
+2025-12-10 20:25:06 INFO: refresh_success
+2025-12-10 20:25:16 INFO: Private route accessed
+2025-12-10 20:25:40 INFO: Private route accessed
+2025-12-17 18:23:34 INFO: MongoDB connected
+2025-12-17 18:23:34 INFO: Server started on port 4000
+2025-12-17 18:29:26 INFO: register_success
+2025-12-17 18:29:27 INFO: login_success
+2025-12-17 18:42:19 INFO: register_success
+2025-12-17 18:42:20 INFO: login_success
+2025-12-17 18:43:34 INFO: MongoDB connected
+2025-12-17 18:43:34 INFO: Server started on port 4000
+2025-12-17 18:47:02 INFO: register_success
+2025-12-17 18:47:03 INFO: login_success
+2025-12-17 18:47:23 INFO: MongoDB connected
+2025-12-17 18:47:23 INFO: Server started on port 4000

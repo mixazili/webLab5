@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Monitoring</title>
+</head>
+<body>
+  <h1>Live Monitoring</h1>
+  <p>Successful logins: <span id="success">0</span></p>
+  <p>Failed logins: <span id="failure">0</span></p>
+  <p>Suspicious events: <span id="suspicious">0</span></p>
+
+  <script>
+    async function fetchMetrics() {
+      try {
+        const res = await fetch('http://localhost:4000/metrics');
+        const text = await res.text();
+        const lines = text.split('\n');
+
+        const success = lines.find(l => l.startsWith('auth_success_total'))?.split(' ')[1] || 0;
+        const failure = lines.find(l => l.startsWith('auth_failure_total'))?.split(' ')[1] || 0;
+        const suspicious = lines.find(l => l.startsWith('auth_suspicious_total'))?.split(' ')[1] || 0;
+
+        document.getElementById('success').innerText = success;
+        document.getElementById('failure').innerText = failure;
+        document.getElementById('suspicious').innerText = suspicious;
+      } catch (err) {
+        console.error('Error fetching metrics:', err);
+      }
+    }
+
+    setInterval(fetchMetrics, 1000); // обновлять каждую секунду
+    fetchMetrics(); // сразу первый вызов
+  </script>
+</body>
+</html>
